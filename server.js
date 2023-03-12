@@ -1,12 +1,20 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-app.listen('3000', ()=>console.log('listening at port 3000'));
+//models
+const Stat = require("./models/Stat");
 
-app.set('view engine', 'ejs');
+app.listen("3000", () => console.log("listening at port 3000"));
 
-app.use(express.static('public'))
+app.set("view engine", "ejs");
 
-app.get('/', async(req, res)=>{
-    res.render('index');
-})
+app.use(express.static("public"));
+
+mongoose.connect(process.env.DBURI);
+
+app.get("/", async (req, res) => {
+  const stats = await Stat.findOne();
+  res.render("index", { stats });
+});

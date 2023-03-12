@@ -79,23 +79,13 @@
   top: 0;
   right: 0;
   left: 0;
-  bottom: 0;
+  height: 100vh;
   z-index: 2;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.3)
   );
-}
-
-/* utility classes */
-.active {
-  display: block;
-}
-
-.disable-scroll {
-  height: 100%;
-  overflow-y: hidden;
 }
 
 .mainWrapper {
@@ -116,6 +106,11 @@
   margin-inline: 20px;
 }
 
+h1 {
+  font-weight: 600;
+  font-size: 25px;
+}
+
 .product-logo {
   width: 60px;
   height: 60px;
@@ -125,6 +120,95 @@
 .info p {
   color: var(--DarkGray);
 }
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 30px;
+  gap: 10px;
+}
+
+.back {
+  background-color: var(--ModerateCyan);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 200px;
+  font-weight: 500;
+}
+
+.back:hover {
+  background-color: var(--DarkCyan);
+}
+
+.bookmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  border: none;
+}
+
+.bookmark:hover {
+  opacity: 0.8;
+}
+
+.bookmark-icon {
+  border-radius: 50%;
+}
+
+.bookmark-text {
+  display: none;
+  color: var(--DarkGray);
+  font-weight: 600;
+}
+
+.stats-container {
+  margin: 60px auto 60px auto;
+  width: 90%;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+.stat {
+  /* height: 100px; */
+}
+
+.stat h2 {
+  font-weight: 600;
+}
+.stat p {
+  color: var(--DarkGray);
+}
+
+.w3-cyan {
+  background-color: var(--ModerateCyan) !important;
+}
+
+/* utility classes start */
+.active {
+  display: block;
+}
+
+.disable-scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.bookmarked-icon {
+  fill: var(--DarkCyan);
+}
+
+.bookmarked-text {
+  color: var(--DarkCyan);
+}
+/* utility classes end */
 
 @media (min-width: 650px) {
   .nav-links-desktop {
@@ -148,7 +232,30 @@
   .mobile-menu-overlay {
     display: none;
   }
+
   .mainWrapper {
     margin-top: 15vw;
   }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  .bookmark {
+    padding-right: 20px;
+  }
+
+  .bookmark-text {
+    display: block;
+  }
+
+  .stats {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* .stat:not(:first-child) {
+    border-left: 1px solid rgb(188, 184, 184);
+    padding-left: 60px;
+  } */
 }

@@ -11,6 +11,8 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Crowdfunding product page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
   </head>
@@ -68,14 +70,57 @@
                 alt="product-logo"
               />
             </div>
-            <h1>Mastercraft Bamboo Monior Riser</h1>
+            <h1>Mastercraft Bamboo Monitor Riser</h1>
             <p>
               A beautiful & handcrafted monitor stand to reduce neck and eye
               strain.
             </p>
           </section>
-          <section class="actions"></section>
+          <section class="actions">
+            <button class="back">Back this project</button>
+            <button class="bookmark">
+              <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <circle
+                    class="bookmark-icon"
+                    fill="#2F2F2F"
+                    cx="28"
+                    cy="28"
+                    r="28"
+                  />
+                  <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                </g>
+              </svg>
+              <span class="bookmark-text">Bookmark</span>
+            </button>
+          </section>
         </header>
+        <section class="stats-container">
+          <div class="stats">
+            <div class="money stat">
+              <h2>$<span><%= stats.money %></span></h2>
+              <p>of $100,000 backed</p>
+            </div>
+            <hr />
+            <div class="backers stat">
+              <h2><span><%= stats.backers %></span></h2>
+              <p>total backers</p>
+            </div>
+            <hr />
+            <div class="days-left stat">
+              <h2><span>56</span></h2>
+              <p>days left</p>
+            </div>
+          </div>
+          <div class="w3-container">
+            <div
+              class="w3-border"
+              style="border-radius: 15px; overflow: hidden"
+            >
+              <div class="w3-cyan" style="height: 15px; width: 20%"></div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>
