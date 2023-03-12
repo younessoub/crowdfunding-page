@@ -8,6 +8,7 @@ openMenu.addEventListener('click', (e)=>{
     closeMenu.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     mobileMenuOverlay.classList.toggle('active');
+    document.body.classList.toggle('disable-scroll');
 });
 
 closeMenu.addEventListener('click', (e)=>{
@@ -15,4 +16,5 @@ closeMenu.addEventListener('click', (e)=>{
     openMenu.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     mobileMenuOverlay.classList.toggle('active');
+    document.body.classList.toggle('disable-scroll');
 });
