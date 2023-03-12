@@ -176,10 +176,6 @@ h1 {
   margin-bottom: 30px;
 }
 
-.stat {
-  /* height: 100px; */
-}
-
 .stat h2 {
   font-weight: 600;
 }
@@ -189,6 +185,84 @@ h1 {
 
 .w3-cyan {
   background-color: var(--ModerateCyan) !important;
+}
+
+.about {
+  text-align: left;
+  width: 90%;
+  margin: 40px auto 0 auto;
+}
+
+.about h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: var(--DarkGray);
+}
+
+.pledges {
+  text-align: left;
+  width: 90%;
+  margin: 40px auto 0 auto;
+}
+
+.pledge {
+  border: 1px solid var(--DarkGray);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.pledge-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.pledge-header h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.pledge-header p {
+  color: var(--DarkCyan);
+  font-weight: 500;
+}
+
+.pledge-info {
+  color: var(--DarkGray);
+  margin-bottom: 30px;
+}
+
+.pledge-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pledge-left h4 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.pledge-left span {
+  color: var(--DarkGray);
+}
+
+.pledge-button {
+  cursor: pointer;
+  color: white;
+  height: 50px;
+  width: 200px;
+  border-radius: 50px;
+  border: none;
+}
+
+.pledge-button:hover {
+  background-color: var(--DarkCyan);
 }
 
 /* utility classes start */
@@ -254,8 +328,15 @@ h1 {
     justify-content: space-around;
   }
 
-  /* .stat:not(:first-child) {
-    border-left: 1px solid rgb(188, 184, 184);
-    padding-left: 60px;
-  } */
+  .pledge-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pledge-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
