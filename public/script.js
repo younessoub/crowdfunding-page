@@ -9,13 +9,22 @@ openMenu.addEventListener("click", (e) => {
   mobileMenu.classList.add("active");
   mobileMenuOverlay.classList.add("active");
   document.body.classList.add("disable-scroll");
+  setTimeout(() => {
+    mobileMenu.style.opacity = "1";
+    mobileMenuOverlay.style.opacity = "1";
+  }, 10);
 });
 
 closeMenu.addEventListener("click", (e) => {
   e.target.classList.remove("active");
   openMenu.classList.add("active");
-  mobileMenu.classList.remove("active");
-  mobileMenuOverlay.classList.remove("active");
+  mobileMenu.style.opacity = "0";
+  mobileMenuOverlay.style.opacity = "0";
+  setTimeout(() => {
+    mobileMenu.classList.remove("active");
+    mobileMenuOverlay.classList.remove("active");
+  }, 300);
+
   document.body.classList.remove("disable-scroll");
 });
 
@@ -40,4 +49,37 @@ function handleBookMarked() {
 // check localstorage for bookmarked or not
 if (localStorage.getItem("bookmarked") == "true") {
   handleBookMarked();
+}
+
+//showing modal selection and hiding it
+
+//button that says bavk this project
+const backButton = document.querySelector(".back");
+const modalSelection = document.querySelector(".selection-modal");
+const modalOverlay = document.querySelector(".modal-overlay");
+const closeModalButton = document.querySelector(".close-modal-button");
+
+backButton.addEventListener("click", () => {
+  handleModal("show");
+});
+closeModalButton.addEventListener("click", () => {
+  handleModal("hide");
+});
+
+function handleModal(action) {
+  if (action === "show") {
+    modalSelection.classList.add("active");
+    modalOverlay.classList.add("active");
+    setTimeout(() => {
+      modalSelection.style.opacity = "1";
+      modalOverlay.style.opacity = "1";
+    }, 10);
+  } else if (action === "hide") {
+    modalSelection.style.opacity = "0";
+    modalOverlay.style.opacity = "0";
+    setTimeout(() => {
+      modalSelection.classList.remove("active");
+      modalOverlay.classList.remove("active");
+    }, 300);
+  }
 }
